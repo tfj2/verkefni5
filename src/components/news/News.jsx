@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import s from './News.module.scss';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -15,8 +16,9 @@ function NewsId({ id = '', link = '',}){
 
       <div>
         <dl>
-          <dt>{id}</dt>
-          <dt>{link}</dt>
+        <a href= {link} rel="noreferrer">
+        {id}
+       </a>
         </dl>
       </div>
 
@@ -68,7 +70,7 @@ export function News({title, newsId, index}) {
   
   let newslist = data || [];
   return (
-      <li>
+      <li className={s.News}>
         <h2>{newsId}</h2>
         {newslist.length === 0 && (
           <li> nothing, {apiUrl}</li>
@@ -88,7 +90,7 @@ export function News({title, newsId, index}) {
         })}
         {newslist.length !== 0 && !index && newslist.items.map((items, i) => {
           const {
-            body, link, published, publisher, title
+          link,  title
           } = items;
   
           return(

@@ -29,6 +29,10 @@ export default function App() {
            <Route path="/:types" children={<NewsPage />}></Route>
            <Route component={NotFound} />
           </Switch>
+          <p>Fréttir frá</p>
+          <a href= "https://ruv.is" rel="noreferrer">
+          RUV
+       </a>
       </div>
     </BrowserRouter>
   );

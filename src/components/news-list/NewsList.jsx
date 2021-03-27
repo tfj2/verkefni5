@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {News} from '../news/News'
 import { NavLink } from 'react-router-dom';
+import s from './NewsList.module.scss';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -70,7 +71,7 @@ let index = true;
 let newslist = data || [];
 return (
   <section>
-    <ul>
+    <ul className = {s.section}>
       {newslist.length === 0 && (
         <li> nothing, {apiUrl}</li>
       )}
@@ -80,7 +81,7 @@ return (
         } = item;
         console.log(id)
         return(
-          <div>
+          <div className={s.News}>
             <News
             title = {id}
             newsId = {title}
