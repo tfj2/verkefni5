@@ -54,7 +54,7 @@ export function News({title, newsId, index}) {
         setData(json);
       }
       fetchData()
-    }, []);
+    }, [title]);
   
   if (error) {
     return (
@@ -78,7 +78,7 @@ export function News({title, newsId, index}) {
         {newslist.length !== 0 && index && newslist.items.map((items, i) => {
           newslist.items.splice(5);
           const {
-            body, link, published, publisher, title
+            link, title
           } = items;
   
           return(

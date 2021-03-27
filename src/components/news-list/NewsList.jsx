@@ -77,7 +77,7 @@ return (
       )}
       {newslist.length > 0 && newslist.map((item, i) => {
         const {
-          id, url, title
+          id, title
         } = item;
         console.log(id)
         return(
